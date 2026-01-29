@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KOVOBAU SEWEKAN SAMUEL Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* --- COLORS & THEME --- */
+    :root {
+      --primary: #ff6a00;
+      --secondary: #ee0979;
+      --accent: #38ef7d;
+      --dark-bg: #0f172a;
+      --light-bg: #f9fafb;
+      --text-dark: #111;
+      --text-light: #f5f5f5;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--light-bg);
+      color: var(--text-dark);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    header {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+    }
+
+    .about-container {
+      display: flex;
+      gap: 2rem;
+      padding: 3rem 2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .about-image img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid var(--accent);
+      box-shadow: 0 0 20px rgba(56,239,125,0.6);
+      transition: transform 0.4s ease;
+    }
+    .about-image img:hover {
+      transform: scale(1.08) rotate(3deg);
+    }
+    .about-text h2 {
+      font-size: 2rem;
+      color: var(--secondary);
+    }
+    .about-text p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    /* Skills */
+    .skills-list li {
+      margin: 1rem 0;
+      list-style: none;
+      font-weight: bold;
+    }
+    .skill-bar {
+      background: #ddd;
+      border-radius: 10px;
+      height: 8px;
+      margin-top: 5px;
+      overflow: hidden;
+    }
+    .skill-bar-inner {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transition: width 1s ease-out;
+    }
+
+    /* Projects */
+    .project-item {
+      background: linear-gradient(135deg, #4158d0, #c850c0, #ffcc70);
+      padding: 1.5rem;
+      border-radius: 12px;
+      color: white;
+      margin-bottom: 1rem;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    }
+
+    /* Contact */
+    #contact {
+      background: var(--dark-bg);
+      color: var(--text-light);
+      padding: 2rem;
+    }
+    #contact a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #111;
+      color: #aaa;
+    }
+
+    /* Dark theme */
+    body.dark-theme {
+      background: var(--dark-bg);
+      color: var(--text-light);
+    }
+    body.dark-theme nav {
+      background: linear-gradient(90deg, var(--secondary), var(--primary));
+    }
+    body.dark-theme .project-item {
+      box-shadow: 0 0 10px var(--accent);
+    }
+
+    /* Scroll-to-top */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--accent);
+      color: #111;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      display: none;
+      font-size: 1.3rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    #scrollTopBtn:hover {
+      background: var(--primary);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#project">Projects</a>
+  </nav>
+
+  <header id="home">
+    <h1>👋 Hi, I'm <span id="typewriter"></span></h1>
+    <p>  Problem Solver | Tech Enthusiast |Cyber security 🚀</p>
+  </header>
+
+  <section id="about">
+    <div class="about-container">
+      <div class="about-image">
+        <img src="photo.jpg" alt="profile"
+          onerror="this.src='https://via.placeholder.com/200?text=No+Image';">
+      </div>
+      <div class="about-text">
+        <h2><b>ABOUT ME</b></h2>
+        <p><i>
+          I’m a curious mind who loves turning <b>complex problems</b> into simple, elegant solutions.  
+          I specialize in **JavaScript, React, and backend integration**, blending creativity with logic to build user-friendly applications.  
+        </i></p>
+        <p><i>
+          Beyond coding, I thrive on **mentoring new developers**, contributing to open-source projects, and exploring <b>AI-powered solutions</b>.  
+          When I’m not coding, you’ll probably find me reading tech blogs, or solving strategy puzzles ♟️.
+        </i></p>
+        <p><i>creating website and building applications is my passion. i love coding and creating interactive websites,/i</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <h2>My Skills </h2>
+      <ul class="skills-list">
+        <li>HTML<div class="skill-bar"><div class="skill-bar-inner" data-skill="95"></div></div></li>
+        <li>CSS<div class="skill-bar"><div class="skill-bar-inner" data-skill="90"></div></div></li>
+        <li>JavaScript<div class="skill-bar"><div class="skill-bar-inner" data-skill="88"></div></div></li>
+        <li>React<div class="skill-bar"><div class="skill-bar-inner" data-skill="60"></div></div></li>
+        <li>ecthical-hacking<div class="skill-bar"><div class="skill-bar-inner" data-skill="40"></div></div></li>
+        <li>ui/ux designing<div class="skill-bar"><div class="skill-bar-inner" data-skill="90"></div></div></li>
+        <li>graphic designing<div class="skill-bar"><div class="skill-bar-inner" data-skill="90"></div></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <h2>Experience </h2>
+      <div>
+        <h3>Web Developer Intern</h3>
+        <p>Collaborated with a team to optimize UI performance, debug features, and deploy projects efficiently.</p>
+      </div>
+      <div>
+        <h3>Freelance Developer</h3>
+        <p>Built responsive websites for businesses, focusing on modern design and fast load times.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="project">
+    <div class="container">
+      <h2>Projects 📝</h2>
+      <div class="project-item">🚀 Portfolio Website – A responsive personal site with animations & dark mode.</div>
+      <div class="project-item">📊 Task Manager – Increased productivity by 30% with a React + Node.js app.</div>
+      <div class="project-item">🤖 AI Chatbot – Experimented with NLP to create an interactive support bot.</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact 📱</h2>
+    <p>Email: <a href="kovobausewekan12@gmail.com">kovobausewekan12@gmail.com</a>
+    <p>Phone: 08069135098</p>
+    <p>WhatsApp: +234 8069135098</p>
+    <p>Instagram: big sam23</p>
+    
+  </section>
+
+  <footer>
+    <p>&copy; 2025 samuel</p>
+  </footer>
+
+  <button id="scrollTopBtn"><i class="fas fa-arrow-up"></i></button>
+
+  <script>
+    // --- Typewriter ---
+    const text = "KOVOBAU SEWEKAN SAMUEL"
+    const typeElem = document.getElementById("typewriter");
+    let idx = 0;
+    function type() {
+      if (idx < text.length) {
+        typeElem.textContent += text.charAt(idx);
+        idx++;
+        setTimeout(type, 120);
+      }
+    }
+    type();
+
+    // --- Scroll-to-top ---
+    const scrollBtn = document.getElementById("scrollTopBtn");
+    window.addEventListener("scroll", () => {
+      scrollBtn.style.display = window.scrollY > 200 ? "block" : "none";
+    });
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({top: 0, behavior: "smooth"});
+    });
+
+    // --- Animate Skills ---
+    const skills = document.querySelectorAll(".skill-bar-inner");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          skills.forEach(bar => {
+            const val = bar.getAttribute("data-skill");
+            bar.style.width = val + "%";
+          });
+        }
+      });
+    }, { threshold: 0.4 });
+    observer.observe(document.querySelector("#skills"));
+
+    // --- Dark / Light Mode ---
+    document.addEventListener("keydown", e => {
+      if (e.key === "d") {
+        document.body.classList.toggle("dark-theme");
+      }
+    });
+
+    // --- Easter Egg ---
+    let clicks = 0;
+    document.addEventListener("click", () => {
+      clicks++;
+      if (clicks === 7) {
+        alert("🔥 Keep shining, andy! The world needs your code. 🚀");
+        clicks = 0;
+      }
+    });
+  </script>
+</body>
+</html>
